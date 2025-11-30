@@ -1,22 +1,29 @@
 #!/usr/bin/python3
 # SPDX-FileCopyrightText: 2025 Yasushi Ando yasushigit@gmail.com
 # SPDX-License-Identifier: GPL-3.0-only
+
 import sys
+
+def analyze_text(text: str) -> dict:
+    if not text:
+        lines = 0
+    else:
+        lines = text.count("\n")
+        if not text.endswith("\n"):
+            lines += 1
+
+    return {
+        "lines": lines,
+        "words": len(text.split()),
+        "chars": len(text)
+    }
 
 def main():
     text = sys.stdin.read()
-    if text == "":
-        num_lines = 0
-    else:
-        num_lines = text.count("\n")
-        if not text.endswith("\n"):
-            num_lines += 1
-
-    num_words = len(text.split())
-
-    num_chars = len(text)
-
-    print(f"lines:{num_lines} words:{num_words} chars:{num_chars}")
+    
+    stats = analyze_text(text)
+    
+    print(f"lines:{stats['lines']} words:{stats['words']} chars:{stats['chars']}")
 
 if __name__ == "__main__":
     main()
