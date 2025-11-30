@@ -7,15 +7,10 @@
   - 単語数: 空白区切りによる単語の総数
   - 文字数: 全ての文字数
 
-
 ## インストール方法
 
-以下のコマンドを入力してください
-
-```
+```bash
 $ git clone https://github.com/yasushigit/robosys2025.git
-```
-```
 $ cd robosys2025
 ```
 
@@ -23,23 +18,25 @@ $ cd robosys2025
 
 ### 文字列を入力する場合
 
-入力:
-```
+**入力:**
+```bash
 $ echo "Hello World" | ./plus
 ```
-出力:
-```
+
+**出力:**
+```text
 lines:1 words:2 chars:12
 ```
 
 ### コマンドの出力を入力する場合
 
-入力:
-```
+**入力:**
+```bash
 $ seq 5 | ./plus
 ```
-出力:
-```
+
+**出力:**
+```text
 lines:5 words:5 chars:10
 ```
 
@@ -50,9 +47,7 @@ lines:5 words:5 chars:10
 ## テスト環境
 - Ubuntu 24.04
 
-
 ## ライセンス
-
 - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
 - このパッケージは，Ryuichi Ueda由来のコード（© 2025 Ryuichi Ueda）を利用しています．
 - このパッケージのコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
