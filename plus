@@ -6,14 +6,13 @@ import sys
 def main():
     text = sys.stdin.read()
 
-    lines = text.splitlines()
-    num_lines = len(lines)
+    lines = len(text.splitlines())
 
-    num_words = len(text.split())
+    words = len(text.split())
 
-    num_chars = len(text.rstrip("\n"))
+    chars = len(text)
 
-    print(f"lines:{num_lines} words:{num_words} chars:{num_chars}")
+    print(f"lines:{lines} words:{words} chars:{chars}")
 
 if __name__ == "__main__":
     main()
