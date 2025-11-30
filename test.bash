@@ -3,32 +3,33 @@
 # SPDX-License-Identifier: GPL-3.0-only
 
 ng() {
-    echo "${1}行目が違うよ: ${2}"
+    echo "Test failed at line $1"
+    echo "  Expected: '$expected'"
+    echo "  Actual:   '$out'"
     res=1
 }
 
 res=0
 
-#テスト1: 単一行
-out=$(echo "hello world" | ./plus)
-[ "$out" = "lines:1 words:2 chars:11" ] || ng "$LINENO" "期待: lines:1 words:2 chars:11, 出力: $out"
+# テストケース1: 普通のテキスト (Hello World + 改行)
+expected="lines:1 words:2 chars:12"
+out=$(echo "Hello World" | ./textinfo.py)
+[ "$out" = "$expected" ] || ng "$LINENO"
 
-#テスト2: 改行あり
-out=$(echo -e "hello world\n" | ./plus)
-[ "$out" = "lines:1 words:2 chars:12" ] || ng "$LINENO" "期待: lines:1 words:2 chars:12, 出力: $out"
+# テストケース2: 空文字
+expected="lines:0 words:0 chars:0"
+out=$(echo -n "" | ./textinfo.py)
+[ "$out" = "$expected" ] || ng "$LINENO"
 
-#テスト3: 複数行
-out=$(echo -e "a b c\n1 2 3\nx y" | ./plus)
-[ "$out" = "lines:3 words:8 chars:13" ] || ng "$LINENO" "期待: lines:3 words:8 chars:13, 出力: $out"
+# テストケース3: 改行なしのテキスト
+expected="lines:1 words:1 chars:3"
+out=$(printf "foo" | ./textinfo.py)
+[ "$out" = "$expected" ] || ng "$LINENO"
 
-#テスト4: 空文字
-out=$(echo -n "" | ./plus)
-[ "$out" = "lines:0 words:0 chars:0" ] || ng "$LINENO" "期待: lines:0 words:0 chars:0, 出力: $out"
-
-#テスト5: 改行だけ
-out=$(echo -e "\n\n" | ./plus)
-[ "$out" = "lines:2 words:0 chars:2" ] || ng "$LINENO" "期待: lines:2 words:0 chars:2, 出力: $out"
-
-#結果表示
-[ "$res" = 0 ] && echo "OK"
-exit $res
+# 結果判定
+if [ "$res" = 0 ]; then
+    echo "OK"
+    exit 0
+else
+    echo "Failed"
+    exit 1
