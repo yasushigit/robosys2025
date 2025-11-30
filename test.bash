@@ -13,17 +13,17 @@ res=0
 
 # テストケース1: 普通のテキスト (Hello World + 改行)
 expected="lines:1 words:2 chars:12"
-out=$(echo "Hello World" | ./textinfo.py)
+out=$(echo "Hello World" | ./plus)
 [ "$out" = "$expected" ] || ng "$LINENO"
 
 # テストケース2: 空文字
 expected="lines:0 words:0 chars:0"
-out=$(echo -n "" | ./textinfo.py)
+out=$(echo -n "" | ./plus)
 [ "$out" = "$expected" ] || ng "$LINENO"
 
 # テストケース3: 改行なしのテキスト
 expected="lines:1 words:1 chars:3"
-out=$(printf "foo" | ./textinfo.py)
+out=$(printf "foo" | ./plus)
 [ "$out" = "$expected" ] || ng "$LINENO"
 
 # 結果判定
