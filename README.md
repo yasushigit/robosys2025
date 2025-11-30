@@ -8,14 +8,14 @@
   - 文字数: 全ての文字数
 
 ## インストール方法
- 以下のコマンドを入力してください
+以下のコマンドを入力してください
 
- ```
- $ git clone https://github.com/yasushigit/robosys2025.git
- ```
- ```
- $ cd robosys2025
- ```
+```
+$ git clone https://github.com/yasushigit/robosys2025.git
+```
+```
+$ cd robosys2025
+```
 
 ## 必要なソフトウェア
 - Python
