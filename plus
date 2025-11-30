@@ -5,6 +5,7 @@
 import sys
 
 def analyze_text(text: str) -> dict:
+    # 行数の計算
     if not text:
         lines = 0
     else:
@@ -20,9 +21,7 @@ def analyze_text(text: str) -> dict:
 
 def main():
     text = sys.stdin.read()
-    
     stats = analyze_text(text)
-    
     print(f"lines:{stats['lines']} words:{stats['words']} chars:{stats['chars']}")
 
 if __name__ == "__main__":
