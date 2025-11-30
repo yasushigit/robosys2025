@@ -1,5 +1,10 @@
 # plusコマンド
-![test](https://github.com/yasushigit/robosys2025/blob/main/.github/workflows/test.yml/badge.svg)
+![test](https://github.com/yasushigit/robosys2025/actions/workflows/test.yml/badge.svg)
+
+## 必要なソフトウェア
+ - Python
+ - テスト済み: 3.7〜3.10
+- Ubuntu 24.04
 
 
 #ライセンス
