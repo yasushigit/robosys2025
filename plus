@@ -2,9 +2,18 @@
 # SPDX-FileCopyrightText: 2025 Yasushi Ando yasushigit@gmail.com
 # SPDX-License-Identifier: GPL-3.0-only
 import sys
-   
-ans = 0
-for line in sys.stdin:
-    ans += int(line)
-     
-print(ans)
+
+def main():
+    text = sys.stdin.read()
+
+    lines = text.count("\n")
+    if text and not text.endswith("\n"):
+        lines += 1
+
+    words = len(text.split())
+    chars = len(text)
+
+    print(f"lines:{lines} words:{words} chars:{chars}")
+
+if __name__ == "__main__":
+    main()
