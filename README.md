@@ -19,6 +19,29 @@ $ git clone https://github.com/yasushigit/robosys2025.git
 $ cd robosys2025
 ```
 
+## 実行例
+
+### 文字列を入力する場合
+
+入力:
+```
+$ echo "Hello World" | ./plus
+```
+出力:
+```
+lines:1 words:2 chars:12
+```
+
+### コマンドの出力を入力する場合
+入力:
+```
+$ seq 5 | ./plus
+```
+出力:
+```
+lines:5 words:5 chars:10
+```
+
 ## 必要なソフトウェア
 - Python
   - テスト済み: 3.7〜3.10
