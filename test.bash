@@ -33,3 +33,4 @@ if [ "$res" = 0 ]; then
 else
     echo "Failed"
     exit 1
+if
