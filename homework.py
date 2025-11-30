@@ -1,4 +1,6 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+# SPDX-FileCopyrightText: 2025 Yasushi Ando　　　　　
+# SPDX-License-Identifier: BSD-3-Clause
 import sys
 
 def main():
