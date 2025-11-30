@@ -11,7 +11,7 @@ ng() {
 
 res=0
 
-# テストケース1: 普通のテキスト (Hello World + 改行)
+# テストケース1: 普通のテキスト
 expected="lines:1 words:2 chars:12"
 out=$(echo "Hello World" | ./plus)
 [ "$out" = "$expected" ] || ng "$LINENO"
