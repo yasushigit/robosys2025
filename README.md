@@ -2,59 +2,80 @@
 ![test](https://github.com/yasushigit/robosys2025/actions/workflows/test.yml/badge.svg)
 
 ## 説明
-- 標準入力からテキストを読み込み、行数・単語数・文字数を出力する
-  - 行数: テキストに含まれる行の数
-  - 単語数: 空白区切りによる単語の総数
-  - 文字数: 全ての文字数
+標準入力から数字を読み込み以下の要素を出力する
 
-## インストール方法
-```bash
-$ git clone https://github.com/yasushigit/robosys2025.git
+1行目:数列の合計を足し合わせにより求める
+
+2行目:数列の平方の合計を足し合わせにより求める
+
+3行目:数列の合計をシグマ計算( $\frac{1}{2}n(n+1)$ )により求める
+
+4行目:数列の平方の合計をシグマ計算( $\frac{1}{6}n(n+1)(2n+1)$ )により求める
+
+# インストール方法
+
+以下のコマンドを入力してください
+
 ```
+$ git clone https://github.com/ryousukeochiai/robosys2023.git
 ```
-$ cd robosys2025
+
+```
+$ cd robosys2023
 ```
 
 ## 実行例
 
-### 文字列を入力する場合
+例1
 
-**入力:**
-```bash
-$ echo "Hello World" | ./plus
+入力
+
 ```
-
-**出力:**
-```text
-lines:1 words:2 chars:12
-```
-
-### コマンドの出力を入力する場合
-
-**入力:**
-```bash
 $ seq 5 | ./plus
 ```
 
-**出力:**
-```text
-lines:5 words:5 chars:10
+出力
+
+```
+15.0
+
+55.0
+
+15.0
+
+55.0
 ```
 
+
+例2
+
+入力
+
+```
+$ seq 5 10  | ./plus
+```
+
+出力
+
+```
+45.0
+
+355.0
+
+45.0
+
+355.0
+```
+
+
 ## 必要なソフトウェア
-- Python
-  - テスト済み: 3.7〜3.10
+* Python
+  * テスト済み: 3.7〜3.10
 
-## テスト環境
-- Ubuntu 24.04
-
-## 謝辞
-本プログラムコードは、千葉工業大学の上田隆一先生が公開されている講義資料およびサンプルコードを参考に作成いたしました。  
-この場を借りて感謝申し上げます。
+* Ubuntu 20.04
 
 ## ライセンス
-- このソフトウェアパッケージは、3条項BSDライセンスの下で再頒布および使用が許可されます。
-- このパッケージは、Ryuichi Ueda由来のコード（© 2025 Ryuichi Ueda）を利用しています。
-- このパッケージのコードは、下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを、本人の許可を得て自身の著作としたものです。
-  - [ryuichiueda/my_slides robosys_2025](https://github.com/ryuichiueda/slides_marp/tree/master/robosys2025)
-- © 2025 Yasushi Ando
+* このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
+* このパッケージのコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
+* [ryuichiueda/my_slides robosys_2025](https://github.com/ryuichiueda/slides_marp/tree/master/robosys2025)
+* © 2025 Yasushi Ando
