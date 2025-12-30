@@ -1,36 +1,27 @@
-#!/bin/bash
+#!/bin/bash -xv
 # SPDX-FileCopyrightText: 2025 Yasushi Ando
-# SPDX-License-Identifier: GPL-3.0-only
+# SPDX-License-Identifier: BSD-3-Clause
 
-ng() {
-    echo "Test failed at line $1"
-    echo "  Expected: '$expected'"
-    echo "  Actual:   '$out'"
-    res=1
+ng () {
+      echo NG at Line $1
+      res=1
 }
 
 res=0
 
-# テストケース1: 普通のテキスト
-expected="lines:1 words:2 chars:12"
-out=$(echo "Hello World" | ./plus)
-[ "$out" = "$expected" ] || ng "$LINENO"
+out=$(seq 5 | ./plus)
+[ "${out}" = "15.0
+55.0
+15.0
+55.0" ] || ng ${LINENO} "Invalid output"
 
-# テストケース2: 空文字
-expected="lines:0 words:0 chars:0"
-out=$(echo -n "" | ./plus)
-[ "$out" = "$expected" ] || ng "$LINENO"
+out=$(echo あ | ./plus)
+[ "$?" = 1 ]      || ng ${LINENO}
+[ "${out}" = "" ] || ng ${LINENO}
 
-# テストケース3: 改行なしのテキスト
-expected="lines:1 words:1 chars:3"
-out=$(printf "foo" | ./plus)
-[ "$out" = "$expected" ] || ng "$LINENO"
+out=$(echo | ./plus) #空文字
+[ "$?" = 1 ]      || ng ${LINENO}
+[ "${out}" = "" ] || ng ${LINENO}
 
-# 結果判定
-if [ "$res" = 0 ]; then
-    echo "OK"
-    exit 0
-else
-    echo "Failed"
-    exit 1
-fi
+[ "$res" = 0 ] && echo OK
+exit $res

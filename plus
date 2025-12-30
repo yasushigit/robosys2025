@@ -1,28 +1,37 @@
 #!/usr/bin/python3
-# SPDX-FileCopyrightText: 2025 Yasushi Ando yasushigit@gmail.com
-# SPDX-License-Identifier: GPL-3.0-only
+# SPDX-FileCopyrightText: 2025 Yasushi Ando
+# SPDX-License-Identifier: BSD-3-Clause
 
 import sys
 
-def analyze_text(text: str) -> dict:
-    # 行数の計算
-    if not text:
-        lines = 0
-    else:
-        lines = text.count("\n")
-        if not text.endswith("\n"):
-            lines += 1
+def tonum(s):
+      try:
+          return int(s)
+      except:
+          return float(s)
 
-    return {
-        "lines": lines,
-        "words": len(text.split()),
-        "chars": len(text)
-    }
+lines = list(sys.stdin)
 
-def main():
-    text = sys.stdin.read()
-    stats = analyze_text(text)
-    print(f"lines:{stats['lines']} words:{stats['words']} chars:{stats['chars']}")
+ans_plus_1 = 0.0
+ans_square_1 = 0.0
+ans_plus_2 = 0.0
+ans_square_2 = 0.0
 
-if __name__ == "__main__":
-    main()
+# 計算1: Σk および Σk^2
+for line in lines:
+    line = line.rstrip()
+    num = tonum(line)
+    ans_plus_1 += num
+    ans_square_1 += num ** 2
+
+# 計算2: Σk および Σk^2（Σ計算によって求めた場合)
+first_line = tonum(lines[0].strip())
+last_line = tonum(lines[-1].strip())
+ans_plus_2 = ((last_line * (last_line + 1)) / 2) - (((first_line-1) * ((first_line - 1) + 1)) / 2)
+ans_square_2 = ((last_line * (last_line + 1) * (2 * last_line + 1)) / 6) - (((first_line -1) * ((first_line - 1) + 1) * (2 * (first_line-1) + 1)) / 6)
+
+# 結果の表示
+print(ans_plus_1)
+print(ans_square_1)
+print(ans_plus_2)
+print(ans_square_2)
