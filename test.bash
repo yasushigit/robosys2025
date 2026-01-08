@@ -16,6 +16,12 @@ out=$(seq 5 | ./plus)
 15.0
 55.0" ] || ng ${LINENO} "Invalid output"
 
+# テストケース2: あって入れてみる
+out=$(echo あ | ./plus)
+[ "$?" = 1 ]      || ng ${LINENO}
+[ "${out}" = "" ] || ng ${LINENO}
+
+# テストケース3: 普通に
 
 [ "$res" = 0 ] && echo OK
 exit $res
