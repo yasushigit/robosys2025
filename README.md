@@ -45,16 +45,10 @@ lines:5 words:5 chars:10
 - Python
   - テスト済み: 3.7〜3.10
 
-## テスト環境
 - Ubuntu 24.04
 
-## 謝辞
-本プログラムコードは、千葉工業大学の上田隆一先生が公開されている講義資料およびサンプルコードを参考に作成いたしました。  
-この場を借りて感謝申し上げます。
-
 ## ライセンス
-- このソフトウェアパッケージは、3条項BSDライセンスの下で再頒布および使用が許可されます。
-- このパッケージは、Ryuichi Ueda由来のコード（© 2025 Ryuichi Ueda）を利用しています。
-- このパッケージのコードは、下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを、本人の許可を得て自身の著作としたものです。
-  - [ryuichiueda/my_slides robosys_2025](https://github.com/ryuichiueda/slides_marp/tree/master/robosys2025)
+- このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
+- このパッケージのコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
+- [ryuichiueda/my_slides robosys_2025](https://github.com/ryuichiueda/slides_marp/tree/master/robosys2025)
 - © 2025 Yasushi Ando
