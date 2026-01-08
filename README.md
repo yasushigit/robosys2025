@@ -2,7 +2,8 @@
 ![test](https://github.com/yasushigit/robosys2025/actions/workflows/test.yml/badge.svg)
 
 ## 説明
-標準入力から数字を読み込み以下の要素を出力する
+標準入力から数値の列を受け取り、
+合計と平方和を「単純な足し算」と「シグマ公式」の 2通りの方法で計算して出力します
 
 1行目:数列の合計を足し合わせにより求める
 
@@ -23,6 +24,22 @@ $ git clone https://github.com/yasushigit/robosys2025.git
 ```
 $ cd robosys2025
 ```
+
+## 使い方
+
+数列を標準入力としてplusコマンドに渡します
+
+### 1~nまでの数列
+
+'''
+seq n | ./plus
+'''
+
+### start ~ endまでの数列(範囲指定)
+
+'''
+seq start end | ./plus
+'''
 
 ## 実行例
 
