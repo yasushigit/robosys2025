@@ -21,7 +21,10 @@ out=$(echo あ | ./plus)
 [ "$?" = 1 ]      || ng ${LINENO}
 [ "${out}" = "" ] || ng ${LINENO}
 
-# テストケース3: 普通に
+# テストケース3: 空文字送ってみる
+out=$(ech | ./plus)
+[ "$?" = 1 ]      || ng ${LINENO}
+[ "${out}" = "" ] || ng ${LINENO}
 
 [ "$res" = 0 ] && echo OK
 exit $res
