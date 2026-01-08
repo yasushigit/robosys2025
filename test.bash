@@ -2,11 +2,9 @@
 # SPDX-FileCopyrightText: 2025 Yasushi Ando
 # SPDX-License-Identifier: GPL-3.0-only
 
-ng() {
-    echo "Test failed at line $1"
-    echo "  Expected: '$expected'"
-    echo "  Actual:   '$out'"
-    res=1
+ng () {
+      echo NG at Line $1
+      res=1
 }
 
 res=0
