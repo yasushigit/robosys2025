@@ -17,13 +17,13 @@
 
 以下のコマンドを入力してください
 
-'''
+```
 $ git clone https://github.com/yasushigit/robosys2025.git
-'''
+```
 
-'''
+```
 $ cd robosys2025
-'''
+```
 
 ## 使い方
 
@@ -31,15 +31,15 @@ $ cd robosys2025
 
 ### 1~nまでの数列
 
-'''
+```
 seq n | ./plus
-'''
+```
 
 ### start ~ endまでの数列(範囲指定)
 
-'''
+```
 seq start end | ./plus
-'''
+```
 
 ## 実行例
 
