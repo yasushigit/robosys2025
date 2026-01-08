@@ -1,28 +1,3 @@
 #!/usr/bin/python3
-# SPDX-FileCopyrightText: 2025 Yasushi Ando yasushigit@gmail.com
-# SPDX-License-Identifier: GPL-3.0-only
-
-import sys
-
-def analyze_text(text: str) -> dict:
-    # 行数の計算
-    if not text:
-        lines = 0
-    else:
-        lines = text.count("\n")
-        if not text.endswith("\n"):
-            lines += 1
-
-    return {
-        "lines": lines,
-        "words": len(text.split()),
-        "chars": len(text)
-    }
-
-def main():
-    text = sys.stdin.read()
-    stats = analyze_text(text)
-    print(f"lines:{stats['lines']} words:{stats['words']} chars:{stats['chars']}")
-
-if __name__ == "__main__":
-    main()
+# SPDX-FileCopyrightText: 2025 Yasushi Ando
+# SPDX-License-Identifier: BSD-3-Clause
